@@ -1,0 +1,18 @@
+{
+  "defaultEntryPoint": "index.html",
+  "namespace": "VariationCrossSelling",
+  "menuEntries": [
+    {
+      "label": "Spotlight",
+      "menu": "system/settings",
+      "urlKey": "spotlight",
+      "entryPoint": "spotlight.html"
+    },
+    {
+      "label": "Varianten Crossseller",
+      "menu": "item",
+      "urlKey": "variationcrossselling",
+      "entryPoint": "index.html"
+    }
+  ]
+}

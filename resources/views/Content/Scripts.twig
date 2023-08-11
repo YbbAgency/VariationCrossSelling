@@ -1,0 +1,13 @@
+<script type="text/javascript">
+    window.VariationCrossSelling = "{{ plugin_path('VariationCrossSelling') ~ '/js/dist/' }}"
+</script>
+
+{% set minSuffix = '.min' %}
+{% if ceresConfig.log.performanceLevel  == 'development' %}
+    {% set minSuffix = '' %}
+{% endif %}
+
+<!-- SSR:entry({{ ssr_entry('VariationCrossSelling', 'resources/js/dist/VariationCrossSelling-server' ~ minSuffix ~ '.js') }}) -->
+<script src="{{ plugin_path('VariationCrossSelling') }}/js/dist/VariationCrossSelling{{ minSuffix }}.js?v={{ buildHash }}"></script>
+
+{#{{ Translations.add( "VariationCrossSelling", "Template" ) }}#}

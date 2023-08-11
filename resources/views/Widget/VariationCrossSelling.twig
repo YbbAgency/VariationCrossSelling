@@ -1,0 +1,107 @@
+{% import "Ceres::Widgets.Helper.TwigBuilder" as Twig %}
+{% import "Ceres::Widgets.Helper.WidgetHelper" as WidgetHelper %}
+{{ Translations.add( "VariationCrossSelling", "Template" ) }}
+{% import "Ceres::PageDesign.Macros.Translations" as Translations %}
+
+{% set roundedBtns      = widget.settings.roundedBtns.mobile %}
+{% set showHeadline      = widget.settings.showHeadline.mobile %}
+
+{% if isPreview %}
+    <div class="widget">
+        <div class="widget widget-filter-base">
+            <div class="crosslist">
+                {% if showHeadline == true %}
+                    <div class="h3 mb-3">
+                        {{ trans("VariationCrossSelling::Template.translateAddonItemsHeadline")}}
+                    </div>
+                {% endif %}
+                <ul class="list-unstyled" id="single-crosslist">
+                    <li class="mb-1">
+                        <label class="cursor d-flex align-items-center mb-0">
+                                <div class="d-flex flex-fill">
+                                    <div class="mr-3" style="width: 70px ; height: 70px">
+                                        <img class="img-fluid" src="example1">
+                                    </div>
+                                    <div class="flex-fill">
+                                        <div class="crosslisttitle">
+                                            <a href="#">
+                                                <b> Vorschau Artikel 1 Name </b>
+                                            </a>
+                                        </div>
+                                        <div class="crosslistadditional">
+                                            <div class="d-flex">
+                                                <div>
+                                                    <span class="vat small text-muted">99,99€</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="crossSellerAddToCartBtnWrapper">
+                                        {% if roundedBtns == true %}
+                                            <button class="crossSellerAddToCartBtnRounded btn btn-primary btn-appearance">
+                                                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                            </button>
+                                        {% else %}
+                                            <button class="crossSellerAddToCartBtn btn btn-primary btn-appearance">
+                                                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                            </button>
+                                        {% endif %}
+
+                                    </div>
+                                </div>
+                        </label>
+                    </li>
+                    <li class="mb-1">
+                        <label class="cursor d-flex align-items-center mb-0">
+                            <div class="d-flex flex-fill">
+                                <div class="mr-3" style="width: 70px ; height: 70px">
+                                    <img class="img-fluid" src="example2">
+                                </div>
+                                <div class="flex-fill">
+                                    <div class="crosslisttitle">
+                                        <a href="#">
+                                            <b> Vorschau Artikel 2 Name </b>
+                                        </a>
+                                    </div>
+                                    <div class="crosslistadditional">
+                                        <div class="d-flex">
+                                            <div>
+                                                <span class="vat small text-muted">74,99€</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="crossSellerAddToCartBtnWrapper">
+                                    {% if roundedBtns == true %}
+                                        <button class="crossSellerAddToCartBtnRounded btn btn-primary btn-appearance">
+                                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                        </button>
+                                    {% else %}
+                                        <button class="crossSellerAddToCartBtn btn btn-primary btn-appearance">
+                                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                        </button>
+                                    {% endif %}
+
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% else %}
+    {{ Twig.set("itemId", "item.documents[0].id") }}
+        {{ Twig.set("lang", "lang") }}
+        {{ Twig.set('crossSeller',Twig.call('getCrossSeller',[Twig.var("itemId"),Twig.var("lang")]))  }}
+        <div class="widget">
+            {{ Twig.if("itemId > 0") }}
+                {{ Twig.if("crossSeller | length >= 0") }}
+                    <variation-cross-selling :roundedbtns="{{ roundedBtns | json_encode }}" :showheadline="{{ showHeadline | json_encode }}" :crossseller="{{ Twig.print('crossSeller | json_encode') }}">
+                    </variation-cross-selling>
+                {{ Twig.endif() }}
+            {{ Twig.endif() }}
+        </div>
+
+
+{% endif %}

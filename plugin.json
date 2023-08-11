@@ -1,0 +1,31 @@
+{
+  "version"           :   "1.0.0",
+  "license"           :   "Copyright by Ybb Agency",
+  "name"              :   "VariationCrossSelling",
+  "pluginIcon"        :   "icon_plugin_xs.png",
+  "authorIcon"        :   "icon_author_xs.png",
+  "email"             :   "lennart@schoenkannjeder.de",
+  "phone"             :   "",
+  "description"       :   "VariationCrossSelling",
+  "shortDescription"  :   {"de":"Ermöglicht das individuelle konfigieren von Crosssellern pro Variante","en":"Enables individual configuration of cross-sellers for each varation"},
+  "namespace"         :   "VariationCrossSelling",
+  "author"            :   "Lennart Koppitz",
+  "keywords"          :   ["plugins","cross selling","cross-seller","upselling"],
+  "price"             :   0,
+  "categories"        :   [4091],
+  "type"              :   "frontend",
+  "require"           :   [],
+  "serviceProvider"   :   "VariationCrossSelling\\Providers\\VariationCrossSellingProvider",
+  "runOnBuild"        : [
+    "VariationCrossSelling\\Database\\DatabaseMigration"
+  ],
+  "dataProviders"     :
+  [
+     {
+       "key"           :"VariationCrossSelling\\Containers\\VariationCrossSellingTranslations",
+       "name"          :"Load Translations",
+       "description"   :"Dateien für die Mehrsprachigkeit laden",
+       "defaultLayoutContainer": "Ceres::Script.Loader"
+     }
+  ]
+}

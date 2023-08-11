@@ -1,0 +1,13 @@
+{
+  "sections":
+  [
+    {
+      "name": "Frontend",
+      "prefix": "translate"
+    }
+  ],
+  "ignoredTranslationFiles":
+  [
+    "Widget.properties"
+  ]
+}
