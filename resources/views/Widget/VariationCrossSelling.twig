@@ -5,9 +5,10 @@
 
 {% set roundedBtns      = widget.settings.roundedBtns.mobile %}
 {% set showHeadline      = widget.settings.showHeadline.mobile %}
+{% set wrapperClass      = widget.settings.wrapperClass.mobile %}
 
 {% if isPreview %}
-    <div class="widget">
+    <div class="widget {% if wrapperClass | length > 0 %} {{ wrapperClass }}{% endif %}">
         <div class="widget widget-filter-base">
             <div class="crosslist">
                 {% if showHeadline == true %}
@@ -20,7 +21,7 @@
                         <label class="cursor d-flex align-items-center mb-0">
                                 <div class="d-flex flex-fill">
                                     <div class="mr-3" style="width: 70px ; height: 70px">
-                                        <img class="img-fluid" src="example1">
+                                        <img class="img-fluid" style="max-height:70px" src="https://cdn02.plentymarkets.com/9jjwc76la94e/frontend/Plugins/VariantenCrossSelling/noimage.png">
                                     </div>
                                     <div class="flex-fill">
                                         <div class="crosslisttitle">
@@ -54,8 +55,8 @@
                     <li class="mb-1">
                         <label class="cursor d-flex align-items-center mb-0">
                             <div class="d-flex flex-fill">
-                                <div class="mr-3" style="width: 70px ; height: 70px">
-                                    <img class="img-fluid" src="example2">
+                                <div class="mr-3">
+                                    <img style="max-height:70px" class="img-fluid" src="https://cdn02.plentymarkets.com/9jjwc76la94e/frontend/Plugins/VariantenCrossSelling/noimage.png">
                                 </div>
                                 <div class="flex-fill">
                                     <div class="crosslisttitle">
@@ -94,7 +95,7 @@
     {{ Twig.set("itemId", "item.documents[0].id") }}
         {{ Twig.set("lang", "lang") }}
         {{ Twig.set('crossSeller',Twig.call('getCrossSeller',[Twig.var("itemId"),Twig.var("lang")]))  }}
-        <div class="widget">
+        <div class="widget  {% if wrapperClass | length > 0 %} {{ wrapperClass }}{% endif %}">
             {{ Twig.if("itemId > 0") }}
                 {{ Twig.if("crossSeller | length >= 0") }}
                     <variation-cross-selling :roundedbtns="{{ roundedBtns | json_encode }}" :showheadline="{{ showHeadline | json_encode }}" :crossseller="{{ Twig.print('crossSeller | json_encode') }}">

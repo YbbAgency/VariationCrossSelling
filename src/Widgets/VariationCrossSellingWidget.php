@@ -22,7 +22,8 @@ class VariationCrossSellingWidget extends BaseWidget
     {
         return WidgetDataFactory::make("VariationCrossSelling::VariationCrossSelling")
             ->withLabel("Widget.VariationCrossSelling")
-            ->withType(WidgetTypes::DEFAULT)
+            ->withType(WidgetTypes::ITEM)
+            ->withPreviewImageUrl('https://cdn02.plentymarkets.com/9jjwc76la94e/frontend/Plugins/VariantenCrossSelling/variationCrossSelling_builder.png')
             ->withCategory('VariationCrossSelling')
             ->withPosition(1000)
             ->toArray();
@@ -37,7 +38,9 @@ class VariationCrossSellingWidget extends BaseWidget
         /** @var WidgetSettingsFactory $settingsFactory */
         $settingsFactory = pluginApp(WidgetSettingsFactory::class);
 
-        $settingsFactory->createCustomClass();
+        $settingsFactory->createText("wrapperClass")
+            ->withDefaultValue("")
+            ->withName("Widget.wrapperClass");
 
         $settingsFactory->createCheckbox("showHeadline")
             ->withDefaultValue(true)

@@ -23,11 +23,8 @@
                   </div>
                 </template>
                 <template v-else>
-                  <div style="height: 70px;width: 70px" class="mr-3">
-
-                  </div>
+                  <img class="img-fluid mx-4 my-2" style="height:70px" src="https://cdn02.plentymarkets.com/9jjwc76la94e/frontend/Plugins/VariantenCrossSelling/noimage.png" :alt="'noimage'+item.data.variation.id">
                 </template>
-
                 <div class="flex-fill my-2">
                   <div class="crosslisttitle">
                     <a :href="item.data | itemURL">
@@ -99,13 +96,10 @@ export default {
     {
       return this.$store.getters[`${this.itemId}/currentItemVariation`]
     },
-    //current var
-    //watch current var to get crossseller
   },
   created ()
   {
     this.currentCrossSeller = this.crossseller
-    console.log("created this.crossseller",this.currentCrossSeller)
   },
   watch:
   {
@@ -123,7 +117,7 @@ export default {
 
       $.ajax({
         type: 'get',
-        url: '/variationCrossSeller/getCrossSellerForVar/'+varId+'/'+App.language+'/'+1,
+        url: '/variationCrossSeller/getCrossSellerForVar/'+varId+'/'+App.language,
         success: function (response)
         {
           if(response.success == true)
@@ -132,7 +126,7 @@ export default {
           }
         },
         error: function (jqXHR, textStatus, errorThrown) {
-          console.log(jqXHR);
+
         }
       })
     },

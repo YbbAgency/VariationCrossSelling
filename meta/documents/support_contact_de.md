@@ -1,11 +1,14 @@
+# Installation und Konfiguration
+
+Wir freuen uns darauf, dir bei der Ersteinrichtung unserer Produkte behilflich zu sein. Wir stehen dir gerne zur Seite, um sicherzustellen, dass du optimal von unserer Software profitieren kannst.
 ## Webseite
-
-**https://www.spotlight-dev.de/**
-
+ 
+https://www.spotlight-dev.de
+ 
 ## Email
+ 
+info@spotlight-dev.de
 
-sschmidt@schoenkannjeder.de
-
-## Telefon
-
-Add your phone number
+## Forum
+@spotlight-oskrzipek
+@spotlight-sschmidt

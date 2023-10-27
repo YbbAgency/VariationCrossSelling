@@ -1,13 +1,14 @@
-## Web page
+# Installation and configuration
 
- TODO richtige informationen
+We look forward to assisting you with the initial setup of our products. We will be happy to assist you to ensure that you get the most out of our software.
+## Website
 
-**https://www.schoenkannjeder.de/**
+https://www.spotlight-dev.de
 
 ## Email
 
-sschmidt@schoenkannjeder.de
+info@spotlight-dev.de
 
-## Phone
-
-Add your phone number
+## Forum
+@spotlight-oskrzipek
+@spotlight-sschmidt

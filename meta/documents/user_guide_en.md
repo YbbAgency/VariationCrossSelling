@@ -1,48 +1,41 @@
-# Variants Cross Seller
-This plugin allows you to create cross sellers at article variants to display them on the
-corresponding article view.
+# Variant Cross Seller
+This plugin allows you to create cross-sellers for article variants to display them on the corresponding article view.
 
 ## Installation & Setup
-1. first go to **Plugins » Plugin Set Overview**.
-2. select the plugin set in which you want to install our plugin.
-3. now go to **Add Plugin**, then select our plugin and press Install.
-   ![Add an image](../images/Installation.png)
+1. First, go to **Plugins » Plugin Set Overview**.
+2. Select the plugin set in which you want to install our plugin.
+3. Now, click on **Add Plugin**, then select our plugin and press Install.
+   ![Add an image](https://cdn02.plentymarkets.com/9jjwc76la94e/frontend/Plugins/VariantenCrossSelling/Installation.png)
 4. **Activate** the installed plugin.
-5. next go to **CMS » Shopbuilder** and here to your item view.
-6. now add the plugin at the desired position.
+5. Next, go to **CMS » Shopbuilder** and navigate to your article view.
+6. Now, insert the plugin at the desired location.
+   ![Add an image](https://cdn02.plentymarkets.com/9jjwc76la94e/frontend/Plugins/VariantenCrossSelling/shopuilderEinbindung.png)
+7. The widget is now functional, but it remains invisible until you configure cross-sellers.
+8. Configure your cross-sellers.
 
-   ![Add an image](../images/placewidget.png)
-7. now the widget is already functional, as long as you don't configure any cross sellers, the component remains invisible.
-8. configure your cross sellers
+### Configuration of a Cross Seller
+1. Go to **Items » Variations Cross Seller** to access our user interface.
+2. When you are in the user interface, click on **Create New Link**.
+   ![Add an image](https://cdn02.plentymarkets.com/9jjwc76la94e/frontend/Plugins/VariantenCrossSelling/erstellen1.png)
+3. Search for the variant you desire and click on it.
+   ![Add an image](https://cdn02.plentymarkets.com/9jjwc76la94e/frontend/Plugins/VariantenCrossSelling/erstellen2.png)
+4. Now, click on the "Plus" icon next to Linked Cross Sellers.
+   ![Add an image](https://cdn02.plentymarkets.com/9jjwc76la94e/frontend/Plugins/VariantenCrossSelling/erstellen3.png)
+5. Search for the cross-sellers you want and select them. Now, simply click "Add Cross Sellers."
+   ![Add an image](https://cdn02.plentymarkets.com/9jjwc76la94e/frontend/Plugins/VariantenCrossSelling/erstellen4.png)
 
-### Configuring a Cross Seller
-1. go to **Item » Variations Cross Seller** to go to our user interface.
-   When you are in the user interface click **Create a new link**.
-   ![Add an image](../images/erstellen1neu.png)
-3. search for the variant you want and click on it.
-   ![Add an image](../images/erstellen2neu.png)
-4. now click on the "plus" at Linked Cross Seller
-   ![Add an image](../images/erstellen3.png)
-5. search for the cross sellers you want and select them. Now you just have to click "Add Cross Seller".
-   ![Add an image](../images/erstellen4neu.png)
+#### Dashboard with Overview of All Configured Cross Sellers:
+- In the "Dashboard" section of the interface, you will find all previously configured cross-sellers.
+#### Deleting Configurations:
+- To delete a configuration, simply select the variant from which the configuration should be removed and click on the "Delete" button.
+  ![Add an image](https://cdn02.plentymarkets.com/9jjwc76la94e/frontend/Plugins/VariantenCrossSelling/loeschen.png)
 
-####-Dashboard with an overview of all configured cross sellers:
-- In the "Dashboard" tab of the interface  you will find all already configured Cross Sellers.
-####-Update and delete configurations:
-- To delete a configuration simply select the variant,
-  where the configuration should be removed and click on the "Delete" button
-  ![Add an image](../images/loeschenNeu.png)
+## Example of Configured Cross Sellers
 
-- To update a configuration simply add new cross sellers or delete them,
-  Your changes will be saved automatically
-  ![Add an image](../images/konfigurieren.png)
+### Frontend:
 
-## Example of configured Cross Seller
+![Add an image](https://cdn02.plentymarkets.com/9jjwc76la94e/frontend/Plugins/VariantenCrossSelling/example1.png)
 
-###Frontend:
+### UI:
 
-![Add an image](../images/example1.png)
-
-###UI:
-
-![Add an image](../images/example1ui.png)
+![Add an image](https://cdn02.plentymarkets.com/9jjwc76la94e/frontend/Plugins/VariantenCrossSelling/exampleUi.png)

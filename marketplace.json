@@ -1,0 +1,23 @@
+{
+  "marketplaceName"   :
+  {
+    "de": "Spotlight Variation Cross Selling",
+    "en": "Spotlight Variation Cross Selling"
+  },
+  "license"           : "",
+  "price"             : 0.0,
+  "subscription"      : [
+    { "interval" :  "monthly",      "price": 35.70    },
+    { "interval" :  "half-yearly",  "price": 203.49   },
+    { "interval" :  "yearly",       "price": 385.56   }
+  ],
+  "offerTrial"        : false,
+  "offerFreemium"     : false,
+  "shortDescription"  :
+  {
+    "de":"Ermöglicht das individuelle konfigurieren von Cross Sellern pro Variante",
+    "en":"Enables individual configuration of cross-sellers for each varation"
+  },
+  "categories"        :   ["4091"],
+  "keywords"          :   ["spot", "spotlight" ,"plugins","cross selling","cross-seller","upselling", "cross", "variation", "sell"]
+}

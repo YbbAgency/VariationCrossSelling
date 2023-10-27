@@ -48,13 +48,10 @@ __webpack_require__.r(__webpack_exports__);
   computed: {
     currentVariation: function currentVariation() {
       return this.$store.getters["".concat(this.itemId, "/currentItemVariation")];
-    } //current var
-    //watch current var to get crossseller
-
+    }
   },
   created: function created() {
     this.currentCrossSeller = this.crossseller;
-    console.log("created this.crossseller", this.currentCrossSeller);
   },
   watch: {
     currentVariation: {
@@ -69,15 +66,13 @@ __webpack_require__.r(__webpack_exports__);
 
       $.ajax({
         type: 'get',
-        url: '/variationCrossSeller/getCrossSellerForVar/' + varId + '/' + App.language + '/' + 1,
+        url: '/variationCrossSeller/getCrossSellerForVar/' + varId + '/' + App.language,
         success: function success(response) {
           if (response.success == true) {
             _self.currentCrossSeller = response.vars;
           }
         },
-        error: function error(jqXHR, textStatus, errorThrown) {
-          console.log(jqXHR);
-        }
+        error: function error(jqXHR, textStatus, errorThrown) {}
       });
     },
     addItemToBasket: function addItemToBasket(items) {
@@ -163,7 +158,7 @@ var render = function render() {
   return _vm.currentCrossSeller.length > 0 ? _c("div", {
     staticClass: "widget widget-filter-base"
   }, [_vm._ssrNode('<div class="crosslist">' + (_vm.showheadline === true ? '<div class="h3 mb-3">' + _vm._ssrEscape("\n        " + _vm._s(_vm.$translate("VariationCrossSelling::Template.translateAddonItemsHeadline")) + "\n      ") + "</div>" : "<!---->") + ' <ul id="single-crosslist" class="list-unstyled">' + _vm._ssrList(_vm.currentCrossSeller, function (item) {
-    return '<li class="mb-1">' + (item.data && item.data.variation && item.data.variation.id > 0 ? "<label" + _vm._ssrAttr("for", "var_" + item.data.variation.id) + ' class="cursor d-flex align-items-center mb-0"><div class="d-flex flex-fill">' + (item.data.images.variation && item.data.images.variation.length > 0 ? "<div><img" + _vm._ssrAttr("src", item.data.images.variation[0].urlPreview) + _vm._ssrAttr("alt", item.data.texts.name1) + ' class="img-fluid mx-4 my-2" style="height:70px"></div>' : item.data.images.all && item.data.images.all.length > 0 ? "<div><img" + _vm._ssrAttr("src", item.data.images.all[0].urlPreview) + _vm._ssrAttr("alt", item.data.texts.name1) + ' class="img-fluid mx-4 my-2" style="height:70px"></div>' : '<div class="mr-3" style="height: 70px;width: 70px"></div>') + ' <div class="flex-fill my-2"><div class="crosslisttitle"><a' + _vm._ssrAttr("href", _vm._f("itemURL")(item.data)) + "><b>" + _vm._ssrEscape(_vm._s(item.data.texts.name1)) + '</b></a></div> <div class="crosslistadditional"><div class="d-flex"><div><span class="vat small text-muted">' + _vm._ssrEscape("\n                           " + _vm._s(item.data.prices.default.price.formatted) + "\n                      ") + '</span></div></div></div></div> <div class="crossSellerAddToCartBtnWrapper"><button' + _vm._ssrAttr("disabled", _vm.addItemToBasketLoading) + _vm._ssrClass("btn btn-primary btn-appearance", {
+    return '<li class="mb-1">' + (item.data && item.data.variation && item.data.variation.id > 0 ? "<label" + _vm._ssrAttr("for", "var_" + item.data.variation.id) + ' class="cursor d-flex align-items-center mb-0"><div class="d-flex flex-fill">' + (item.data.images.variation && item.data.images.variation.length > 0 ? "<div><img" + _vm._ssrAttr("src", item.data.images.variation[0].urlPreview) + _vm._ssrAttr("alt", item.data.texts.name1) + ' class="img-fluid mx-4 my-2" style="height:70px"></div>' : item.data.images.all && item.data.images.all.length > 0 ? "<div><img" + _vm._ssrAttr("src", item.data.images.all[0].urlPreview) + _vm._ssrAttr("alt", item.data.texts.name1) + ' class="img-fluid mx-4 my-2" style="height:70px"></div>' : '<img src="https://cdn02.plentymarkets.com/9jjwc76la94e/frontend/Plugins/VariantenCrossSelling/noimage.png"' + _vm._ssrAttr("alt", "noimage" + item.data.variation.id) + ' class="img-fluid mx-4 my-2" style="height:70px">') + ' <div class="flex-fill my-2"><div class="crosslisttitle"><a' + _vm._ssrAttr("href", _vm._f("itemURL")(item.data)) + "><b>" + _vm._ssrEscape(_vm._s(item.data.texts.name1)) + '</b></a></div> <div class="crosslistadditional"><div class="d-flex"><div><span class="vat small text-muted">' + _vm._ssrEscape("\n                           " + _vm._s(item.data.prices.default.price.formatted) + "\n                      ") + '</span></div></div></div></div> <div class="crossSellerAddToCartBtnWrapper"><button' + _vm._ssrAttr("disabled", _vm.addItemToBasketLoading) + _vm._ssrClass("btn btn-primary btn-appearance", {
       crossSellerAddToCartBtnRounded: _vm.roundedbtns == true
     }) + ">" + (_vm.addItemToBasketLoading == true ? '<i aria-hidden="true" class="fa fa-refresh fa-spin"></i>' : '<i aria-hidden="true" class="fa fa-cart-plus"></i>') + "</button></div></div></label>" : "<!---->") + "</li>";
   }) + "</ul></div>")]) : _vm._e();

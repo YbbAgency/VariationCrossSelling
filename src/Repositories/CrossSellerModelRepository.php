@@ -57,8 +57,6 @@ class CrossSellerModelRepository implements CrossSellerModelContract
             $crossSellerModel , 10080
         );
 
-        $this->getLogger("forget && add cache")->alert("cache",["key"=>self::PREFIX.$crossSellerModel->varId,"Model"=>$crossSellerModel]);
-
 
         return $crossSellerModel;
     }
@@ -89,7 +87,6 @@ class CrossSellerModelRepository implements CrossSellerModelContract
                     $cKey   =   $cache->forget(
                         self::PREFIX.$entry->varId
                     );
-                    $this->getLogger("forget ( delete )")->alert("cache",["key"=>self::PREFIX.$entry->varId]);
                 }
 
                 return $deletedBoolean;
@@ -133,8 +130,6 @@ class CrossSellerModelRepository implements CrossSellerModelContract
                 {
                     $cache 	    =   pluginApp(CachingRepository::class);
 
-                    $this->getLogger("get Cache not found -> add")->alert("cache",["key"=>self::PREFIX.$varId,"entry"=>$entries[0]]);
-
                     $cache->add(
                         self::PREFIX.$varId
                         ,
@@ -145,7 +140,6 @@ class CrossSellerModelRepository implements CrossSellerModelContract
                 }
             }
             else{
-                $this->getLogger("get cache")->alert("cache",["data"=>$cKey]);
                 return $cKey;
             }
 

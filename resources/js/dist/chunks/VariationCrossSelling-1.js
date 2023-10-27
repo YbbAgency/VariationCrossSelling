@@ -44,13 +44,10 @@ __webpack_require__.r(__webpack_exports__);
   computed: {
     currentVariation: function currentVariation() {
       return this.$store.getters["".concat(this.itemId, "/currentItemVariation")];
-    } //current var
-    //watch current var to get crossseller
-
+    }
   },
   created: function created() {
     this.currentCrossSeller = this.crossseller;
-    console.log("created this.crossseller", this.currentCrossSeller);
   },
   watch: {
     currentVariation: {
@@ -65,15 +62,13 @@ __webpack_require__.r(__webpack_exports__);
 
       $.ajax({
         type: 'get',
-        url: '/variationCrossSeller/getCrossSellerForVar/' + varId + '/' + App.language + '/' + 1,
+        url: '/variationCrossSeller/getCrossSellerForVar/' + varId + '/' + App.language,
         success: function success(response) {
           if (response.success == true) {
             _self.currentCrossSeller = response.vars;
           }
         },
-        error: function error(jqXHR, textStatus, errorThrown) {
-          console.log(jqXHR);
-        }
+        error: function error(jqXHR, textStatus, errorThrown) {}
       });
     },
     addItemToBasket: function addItemToBasket(items) {
@@ -194,11 +189,14 @@ var render = function render() {
         src: item.data.images.all[0].urlPreview,
         alt: item.data.texts.name1
       }
-    })])] : [_c("div", {
-      staticClass: "mr-3",
+    })])] : [_c("img", {
+      staticClass: "img-fluid mx-4 my-2",
       staticStyle: {
-        height: "70px",
-        width: "70px"
+        height: "70px"
+      },
+      attrs: {
+        src: "https://cdn02.plentymarkets.com/9jjwc76la94e/frontend/Plugins/VariantenCrossSelling/noimage.png",
+        alt: "noimage" + item.data.variation.id
       }
     })], _vm._v(" "), _c("div", {
       staticClass: "flex-fill my-2"

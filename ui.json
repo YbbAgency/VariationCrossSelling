@@ -3,13 +3,7 @@
   "namespace": "VariationCrossSelling",
   "menuEntries": [
     {
-      "label": "Spotlight",
-      "menu": "system/settings",
-      "urlKey": "spotlight",
-      "entryPoint": "spotlight.html"
-    },
-    {
-      "label": "Varianten Crossseller",
+      "label": "Varianten Cross Seller",
       "menu": "item",
       "urlKey": "variationcrossselling",
       "entryPoint": "index.html"

@@ -112,7 +112,6 @@ class uiRepository
 
                 $rebuiltArray = [];
 
-
                 for($i = 0 ; $i < sizeof($varData) ; $i++)
                 {
                     if(isset($varData[$i]))
@@ -331,25 +330,6 @@ class uiRepository
     public function getVarDataById($varId)
     {
 
-        //$variationSearchRepositoryContract->setFilters([
-        //                'id' => $variationList
-        //            ]);
-        //            $variationSearchRepositoryContract->setSearchParams(
-        //                [
-        //                    'with' => [
-        //                        'variationDefaultCategory' => null,
-        //                        'variationCategories' => null,
-        //                        'properties' => null,
-        //                        'variationProperties' => null,
-        //                        'variationSalesPrices' => null,
-        //                        'images' => null,
-        //                        'itemImages' => null,
-        //                        'variationAttributeValues' => null,
-        //                        'variationClients' => null
-        //                    ]
-        //                ]);
-        //            $paginatedResult    =   $variationSearchRepositoryContract->search();
-
         $searchFactory              = pluginApp(VariationSearchFactory::class);
         $itemSearchService          = pluginApp(ItemSearchService::class);
 
@@ -374,24 +354,6 @@ class uiRepository
      */
     public function getTableDynamic($data)
     {
-//        $data =
-//        [
-//            "itemsPerPage" => 10,
-//            "filter" =>
-//            [
-//                [
-//                    "where" => "id",
-//                    "operator" => '=',
-//                    "value" => 1
-//                ],
-//                [
-//                    "where" => "createdAt",
-//                    "operator" => '>=',
-//                    "value" => 'timestamp'
-//                ]
-//
-//            ]
-//        ];
 
         $databaseName       = $data['db'];
         $itemsPerPage		= $data['itemsPerPage'] ? $data['itemsPerPage'] : 20;
